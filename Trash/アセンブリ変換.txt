@@ -1,0 +1,39 @@
+
+int i;
+for(i = 0; i < 5; i++){
+	func();
+}
+
+int i = 0;
+do{
+	func();
+	i++;
+}while(i < 5)
+
+
+
+- ecx:繰り返し回数を格納する
+- xor:排他的論理和
+- cmp:オペランドに格納しない引き算
+	- sub:ただの引き算
+	- add:ただの足し算
+- jne : jump if not equal
+
+ab:c
+00:0
+01:1
+10:1
+11:0
+
+ecx = 110010011 
+ecx = 110010011
+ecx = 000000000
+
+xor ecx, ecx
+loc_1;
+call func
+inc ecx
+cmp ecx, 5　
+jne loc_1
+
+→0になった場合、ZF=1(フラグレジスタ)
